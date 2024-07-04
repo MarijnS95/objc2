@@ -15,9 +15,8 @@ use objc2_foundation::{
     ns_string, NSDate, NSNotification, NSObject, NSObjectProtocol, NSPoint, NSRect, NSSize,
 };
 use objc2_metal::{
-    MTLCommandBuffer, MTLCommandEncoder, MTLCommandQueue, MTLCreateSystemDefaultDevice, MTLDevice,
-    MTLLibrary, MTLPackedFloat3, MTLPrimitiveType, MTLRenderCommandEncoder,
-    MTLRenderPipelineDescriptor, MTLRenderPipelineState,
+    MTLCommandBuffer, MTLCommandEncoder, MTLCommandQueue, MTLDevice, MTLLibrary, MTLPackedFloat3,
+    MTLPrimitiveType, MTLRenderCommandEncoder, MTLRenderPipelineDescriptor, MTLRenderPipelineState,
 };
 use objc2_metal_kit::{MTKView, MTKViewDelegate};
 
@@ -106,10 +105,7 @@ declare_class!(
             };
 
             // get the default device
-            let device = {
-                let ptr = unsafe { MTLCreateSystemDefaultDevice() };
-                unsafe { Retained::retain(ptr) }.expect("Failed to get default system device.")
-            };
+            let device = MTLDevice::system_default().expect("Failed to get default system device.");
 
             // create the command queue
             let command_queue = device

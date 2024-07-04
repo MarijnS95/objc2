@@ -1,16 +1,16 @@
-// use crate::MTLDevice;
-//
-// pub trait MTLDeviceExtension {
-//     pub fn system_default() -> Option<Self> {
-//         MTLCreateSystemDefaultDevice()
-//     }
-//
-//     pub fn all() -> Retained<NSArray<Self>> {
-//         #[cfg(target_os = "macos")]
-//         MTLCopyAllDevices()
-//         #[cfg(not(target_os = "macos"))]
-//         NSArray::from(MTLCreateSystemDefaultDevice())
-//     }
-// }
-//
-// impl<P: MTLDevice> MTLDeviceExtension for P {}
+use objc2::{rc::Id, runtime::ProtocolObject};
+use objc2_foundation::NSArray;
+
+use crate::MTLDevice;
+
+pub trait MTLDeviceExt: MTLDevice {
+    fn system_default() -> Option<Id<ProtocolObject<dyn MTLDevice>>> {
+        unsafe { Id::from_raw(crate::MTLCreateSystemDefaultDevice()) }
+    }
+
+    fn all() -> Id<NSArray<ProtocolObject<dyn MTLDevice>>> {
+        unsafe { Id::new_nonnull(crate::MTLCopyAllDevices()) }
+    }
+}
+
+impl<P: MTLDevice> MTLDeviceExt for P {}
