@@ -266,6 +266,9 @@ protocol.MTLDevice.methods."newBinaryArchiveWithDescriptor:error:".unsafe = fals
 protocol.MTLDevice.methods.supportsRaytracing.unsafe = false
 protocol.MTLDevice.methods."accelerationStructureSizesWithDescriptor:".unsafe = false
 protocol.MTLDevice.methods."newAccelerationStructureWithSize:".unsafe = false
+protocol.MTLDevice.methods."newAccelerationStructureWithDescriptor:".unsafe = false
+protocol.MTLDevice.methods."heapAccelerationStructureSizeAndAlign:size:".unsafe = false
+protocol.MTLDevice.methods."heapAccelerationStructureSizeAndAlign:descriptor:".unsafe = false
 protocol.MTLDevice.methods.supportsFunctionPointers.unsafe = false
 
 protocol.MTLDrawable.methods.present.unsafe = false
@@ -367,8 +370,12 @@ protocol.MTLHeap.methods."newTextureWithDescriptor:".unsafe = false
 protocol.MTLHeap.methods."setPurgeableState:".unsafe = false
 # TODO: type
 # TODO: Verify that offset out-of-bounds is sound.
-# newBufferWithLength:options:offset:
-# newTextureWithDescriptor:offset:
+protocol.MTLHeap.methods."newBufferWithLength:options:offset:".unsafe = false
+protocol.MTLHeap.methods."newTextureWithDescriptor:offset:".unsafe = false
+protocol.MTLHeap.methods."newAccelerationStructureWithSize:".unsafe = false
+protocol.MTLHeap.methods."newAccelerationStructureWithSize:offset:".unsafe = false
+protocol.MTLHeap.methods."newAccelerationStructureWithDescriptor:".unsafe = false
+protocol.MTLHeap.methods."newAccelerationStructureWithDescriptor:offset:".unsafe = false
 
 class.MTLIndirectCommandBufferDescriptor.methods.commandTypes.unsafe = false
 class.MTLIndirectCommandBufferDescriptor.methods."setCommandTypes:".unsafe = false
