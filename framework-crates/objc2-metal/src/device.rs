@@ -10,7 +10,7 @@ use objc2_foundation::NSArray;
 /// application based on whatever criteria it deems appropriate.
 ///
 /// On iOS, tvOS and visionOS, this API returns an array containing the same
-/// device that MTLCreateSystemDefaultDevice would have returned, or an empty
+/// device that [`MTLCreateSystemDefaultDevice()`] would have returned, or an empty
 /// array if it would have failed.
 #[inline]
 pub extern "C-unwind" fn MTLCopyAllDevices() -> Retained<NSArray<ProtocolObject<dyn MTLDevice>>> {
