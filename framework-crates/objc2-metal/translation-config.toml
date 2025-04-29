@@ -62,6 +62,8 @@ class.MTLInstanceAccelerationStructureDescriptor.methods."setInstancedAccelerati
 class.MTLInstanceAccelerationStructureDescriptor.methods."setInstanceCount:".unsafe = false
 class.MTLInstanceAccelerationStructureDescriptor.methods."setInstanceDescriptorBuffer:".unsafe = false
 
+protocol.MTLAccelerationStructureCommandEncoder.methods."updateFence:".unsafe = false
+protocol.MTLAccelerationStructureCommandEncoder.methods."waitForFence:".unsafe = false
 protocol.MTLAccelerationStructureCommandEncoder.methods."buildAccelerationStructure:descriptor:scratchBuffer:scratchBufferOffset:".unsafe = false
 protocol.MTLAccelerationStructureCommandEncoder.methods."writeCompactedAccelerationStructureSize:toBuffer:offset:".unsafe = false
 protocol.MTLAccelerationStructureCommandEncoder.methods."copyAndCompactAccelerationStructure:toAccelerationStructure:".unsafe = false
@@ -128,6 +130,7 @@ class.MTLCaptureDescriptor.methods."setOutputURL:".unsafe = false
 protocol.MTLCaptureScope.methods.beginScope.unsafe = false
 protocol.MTLCaptureScope.methods.endScope.unsafe = false
 protocol.MTLCaptureScope.methods.label.unsafe = false
+protocol.MTLCaptureScope.methods."setLabel:".unsafe = false
 
 # Note: MTLCaptureManager is not documented thread-safe, so
 # +sharedCaptureManager is not safe either, since we do interior mutation here.
@@ -143,30 +146,56 @@ class.MTLCaptureManager.methods.defaultCaptureScope.unsafe = false
 class.MTLCaptureManager.methods."setDefaultCaptureScope:".unsafe = false
 class.MTLCaptureManager.methods.isCapturing.unsafe = false
 
+protocol.MTLCommandBuffer.methods.device.unsafe = false
+protocol.MTLCommandBuffer.methods.commandQueue.unsafe = false
+protocol.MTLCommandBuffer.methods.retainedReferences.unsafe = false
+protocol.MTLCommandBuffer.methods.errorOptions.unsafe = false
 protocol.MTLCommandBuffer.methods.label.unsafe = false
 protocol.MTLCommandBuffer.methods."setLabel:".unsafe = false
+protocol.MTLCommandBuffer.methods.kernelStartTime.unsafe = false
+protocol.MTLCommandBuffer.methods.kernelEndTime.unsafe = false
+protocol.MTLCommandBuffer.methods.logs.unsafe = false
+protocol.MTLCommandBuffer.methods.GPUStartTime.unsafe = false
+protocol.MTLCommandBuffer.methods.GPUEndTime.unsafe = false
 protocol.MTLCommandBuffer.methods.enqueue.unsafe = false
 protocol.MTLCommandBuffer.methods.commit.unsafe = false
 protocol.MTLCommandBuffer.methods."presentDrawable:".unsafe = false
+# protocol.MTLCommandBuffer.methods."presentDrawable:atTime:".unsafe = false
+# protocol.MTLCommandBuffer.methods."presentDrawable:afterMinimumDuration:".unsafe = false
 protocol.MTLCommandBuffer.methods.waitUntilScheduled.unsafe = false
 # TODO once blocks are better
 # protocol.MTLCommandBuffer.methods."addCompletedHandler:".unsafe = false
+protocol.MTLCommandBuffer.methods.waitUntilCompleted.unsafe = false
 protocol.MTLCommandBuffer.methods.status.unsafe = false
+protocol.MTLCommandBuffer.methods.error.unsafe = false
 protocol.MTLCommandBuffer.methods.blitCommandEncoder.unsafe = false
 protocol.MTLCommandBuffer.methods."renderCommandEncoderWithDescriptor:".unsafe = false
+protocol.MTLCommandBuffer.methods."computeCommandEncoderWithDescriptor:".unsafe = false
+protocol.MTLCommandBuffer.methods."blitCommandEncoderWithDescriptor:".unsafe = false
 protocol.MTLCommandBuffer.methods.computeCommandEncoder.unsafe = false
 protocol.MTLCommandBuffer.methods."computeCommandEncoderWithDispatchType:".unsafe = false
 protocol.MTLCommandBuffer.methods."encodeWaitForEvent:value:".unsafe = false
 protocol.MTLCommandBuffer.methods."encodeSignalEvent:value:".unsafe = false
 protocol.MTLCommandBuffer.methods."parallelRenderCommandEncoderWithDescriptor:".unsafe = false
+protocol.MTLCommandBuffer.methods.resourceStateCommandEncoder.unsafe = false
+protocol.MTLCommandBuffer.methods."resourceStateCommandEncoderWithDescriptor:".unsafe = false
 protocol.MTLCommandBuffer.methods.accelerationStructureCommandEncoder.unsafe = false
+protocol.MTLCommandBuffer.methods."accelerationStructureCommandEncoderWithDescriptor:".unsafe = false
 protocol.MTLCommandBuffer.methods."pushDebugGroup:".unsafe = false
 protocol.MTLCommandBuffer.methods.popDebugGroup.unsafe = false
+protocol.MTLCommandBuffer.methods."useResidencySet:".unsafe = false
+protocol.MTLCommandBuffer.methods."useResidencySets:count:".unsafe = false
 
 protocol.MTLCommandQueue.methods.label.unsafe = false
 protocol.MTLCommandQueue.methods."setLabel:".unsafe = false
 protocol.MTLCommandQueue.methods.device.unsafe = false
 protocol.MTLCommandQueue.methods.commandBuffer.unsafe = false
+protocol.MTLCommandQueue.methods."commandBufferWithDescriptor:".unsafe = false
+protocol.MTLCommandQueue.methods.commandBufferWithUnretainedReferences.unsafe = false
+protocol.MTLCommandQueue.methods."addResidencySet:".unsafe = false
+protocol.MTLCommandQueue.methods."addResidencySets:count:".unsafe = false
+protocol.MTLCommandQueue.methods."removeResidencySet:".unsafe = false
+protocol.MTLCommandQueue.methods."removeResidencySets:count:".unsafe = false
 
 class.MTLStencilDescriptor.methods.stencilCompareFunction.unsafe = false
 class.MTLStencilDescriptor.methods."setStencilCompareFunction:".unsafe = false
