@@ -186,6 +186,39 @@ protocol.MTLCommandBuffer.methods.popDebugGroup.unsafe = false
 protocol.MTLCommandBuffer.methods."useResidencySet:".unsafe = false
 protocol.MTLCommandBuffer.methods."useResidencySets:count:".unsafe = false
 
+class.MTL4CommandBufferOptions.methods.logState.unsafe = false
+class.MTL4CommandBufferOptions.methods."setLogState:".unsafe = false
+
+protocol.MTL4CommandBuffer.methods.device.unsafe = false
+protocol.MTL4CommandBuffer.methods.label.unsafe = false
+protocol.MTL4CommandBuffer.methods."setLabel:".unsafe = false
+# protocol.MTL4CommandBuffer.methods.enqueue.unsafe = false
+# protocol.MTL4CommandBuffer.methods.commit.unsafe = false
+protocol.MTL4CommandBuffer.methods."beginCommandBufferWithAllocator:".unsafe = false
+protocol.MTL4CommandBuffer.methods."beginCommandBufferWithAllocator:options:".unsafe = false
+protocol.MTL4CommandBuffer.methods.endCommandBuffer.unsafe = false
+# protocol.MTL4CommandBuffer.methods."presentDrawable:".unsafe = false
+# protocol.MTL4CommandBuffer.methods.waitUntilScheduled.unsafe = false
+# # TODO once blocks are better
+# # protocol.MTL4CommandBuffer.methods."addCompletedHandler:".unsafe = false
+# protocol.MTL4CommandBuffer.methods.status.unsafe = false
+# protocol.MTL4CommandBuffer.methods.blitCommandEncoder.unsafe = false
+protocol.MTL4CommandBuffer.methods."renderCommandEncoderWithDescriptor:".unsafe = false
+protocol.MTL4CommandBuffer.methods."renderCommandEncoderWithDescriptor:options:".unsafe = false
+protocol.MTL4CommandBuffer.methods.computeCommandEncoder.unsafe = false
+protocol.MTL4CommandBuffer.methods.machineLearningCommandEncoder.unsafe = false
+# protocol.MTL4CommandBuffer.methods."computeCommandEncoderWithDispatchType:".unsafe = false
+# protocol.MTL4CommandBuffer.methods."encodeWaitForEvent:value:".unsafe = false
+# protocol.MTL4CommandBuffer.methods."encodeSignalEvent:value:".unsafe = false
+# protocol.MTL4CommandBuffer.methods."parallelRenderCommandEncoderWithDescriptor:".unsafe = false
+# protocol.MTL4CommandBuffer.methods.accelerationStructureCommandEncoder.unsafe = false
+protocol.MTL4CommandBuffer.methods."useResidencySet:".unsafe = false
+protocol.MTL4CommandBuffer.methods."useResidencySets:count:".unsafe = false
+protocol.MTL4CommandBuffer.methods."pushDebugGroup:".unsafe = false
+protocol.MTL4CommandBuffer.methods.popDebugGroup.unsafe = false
+protocol.MTL4CommandBuffer.methods."writeTimestampIntoHeap:atIndex:".unsafe = false
+protocol.MTL4CommandBuffer.methods."resolveCounterHeap:withRange:intoBuffer:atOffset:waitFence:updateFence:".unsafe = false
+
 protocol.MTLCommandQueue.methods.label.unsafe = false
 protocol.MTLCommandQueue.methods."setLabel:".unsafe = false
 protocol.MTLCommandQueue.methods.device.unsafe = false
@@ -196,6 +229,31 @@ protocol.MTLCommandQueue.methods."addResidencySet:".unsafe = false
 protocol.MTLCommandQueue.methods."addResidencySets:count:".unsafe = false
 protocol.MTLCommandQueue.methods."removeResidencySet:".unsafe = false
 protocol.MTLCommandQueue.methods."removeResidencySets:count:".unsafe = false
+
+# Probably also pending block improvements?
+# protocol.MTL4CommitOptions.methods."addFeedbackHandler:".unsafe = false
+
+class.MTL4CommandQueueDescriptor.methods.label.unsafe = false
+class.MTL4CommandQueueDescriptor.methods."setLabel:".unsafe = false
+class.MTL4CommandQueueDescriptor.methods."feedbackQueue".unsafe = false
+class.MTL4CommandQueueDescriptor.methods."setFeedbackQueue:".unsafe = false
+
+protocol.MTL4CommandQueue.methods.device.unsafe = false
+protocol.MTL4CommandQueue.methods.label.unsafe = false
+protocol.MTL4CommandQueue.methods."commit:count:".unsafe = false
+protocol.MTL4CommandQueue.methods."commit:count:options:".unsafe = false
+protocol.MTL4CommandQueue.methods."signalEvent:value:".unsafe = false
+protocol.MTL4CommandQueue.methods."waitForEvent:value:".unsafe = false
+protocol.MTL4CommandQueue.methods."signalDrawable:".unsafe = false
+protocol.MTL4CommandQueue.methods."waitForDrawable:".unsafe = false
+protocol.MTL4CommandQueue.methods."addResidencySet:".unsafe = false
+protocol.MTL4CommandQueue.methods."addResidencySets:count:".unsafe = false
+protocol.MTL4CommandQueue.methods."removeResidencySet:".unsafe = false
+protocol.MTL4CommandQueue.methods."removeResidencySets:count:".unsafe = false
+protocol.MTL4CommandQueue.methods."updateTextureMappings:heap:operations:count:".unsafe = false
+protocol.MTL4CommandQueue.methods."copyTextureMappingsFromTexture:toTexture:operations:count:".unsafe = false
+protocol.MTL4CommandQueue.methods."updateBufferMappings:heap:operations:count:".unsafe = false
+protocol.MTL4CommandQueue.methods."copyBufferMappingsFromBuffer:toBuffer:operations:count:".unsafe = false
 
 class.MTLStencilDescriptor.methods.stencilCompareFunction.unsafe = false
 class.MTLStencilDescriptor.methods."setStencilCompareFunction:".unsafe = false
