@@ -78,7 +78,6 @@
 | `Matter` | Mostly available [here](https://github.com/project-chip/connectedhomeip). |
 | `MatterSupport` | Swift-only. |
 | `MediaLibrary` | Deprecated, use PhotoKit instead. |
-| `MeshNetFramework` | Weirdly incomplete. |
 | `Message` | Basically empty. |
 | `MetalPerformancePrimitives` | Header-only framework used in Metal shaders. |
 | `MobileCoreServices` | Deprecated, use CoreServices + UniformTypeIdentifiers instead. |
@@ -119,7 +118,7 @@
 | `Testing` | Swift-only. |
 | `TipKit` | Swift-only. |
 | `Tk` | Very C-centric and old. |
-| `TouchControls` | TODO. |
+| `TouchController` | TODO. |
 | `Translation` | Swift-only. |
 | `TranslationUIProvider` | Swift-only. |
 | `Twitter` | Deprecated, use Social instead. |
